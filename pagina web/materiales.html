@@ -1,0 +1,213 @@
+<html>
+<head>
+<meta name="description" content="Página Web creada mediante HTML sobre 
+practicas preprofesionales en la UCSP">
+<meta name="keyword" content="pagina web, HTML, practicas, UCSP">
+
+<title> Practicas preprofesionales  </title>
+
+</head>
+
+<body background="bg3.jpeg"  text="black">
+
+
+<center><table width="70%" bgcolor="LightBlue">
+
+<tr>
+<td> <center> <img src="sanpablo.jpeg" width="280" height="300" > </center> </td>
+</tr>
+
+<tr>
+<td> <p><center><h1><font face="impact">Proyectos de Desarrollo Tecnológico</font></h1></center></p>
+     <p><center><h2>Desarrollar e implementar guías de prácticas STEM</h2></center></p>
+     <p><center><h3>Autor: Paolo Fabrizio Rodríguez Cárdenas</h3></center></p>
+     <p><center><h3>Jefe de Prácticas: Efrain Mayhua</h3></center></p>
+</td>
+</tr>
+
+
+</center></table>
+
+
+
+
+<center>
+<a href="introduccion.html">
+     <img src="introduccion.png"  width="250" height="70"  HSPACE="20" VSPACE="10">   
+</a>
+
+<a href="materiales.html">
+     <img src="materiales.png"   width="250" height="70"  HSPACE="20" VSPACE="10">    
+</a>
+
+<a href="desarrollo.html">
+     <img src="desarrollo.png"   width="250" height="70"  HSPACE="20" VSPACE="10"> 
+</a>
+
+<a href="diseño.html">
+     <img src="diseño.png"       width="250" height="70"  HSPACE="20" VSPACE="10">
+</a>
+
+<a href="conclusiones.html">
+     <img src="conclusiones.png" width="250" height="70"  HSPACE="20" VSPACE="10">
+</a>
+</center>
+
+
+
+<center><table border="2" width="70%" bgcolor="Silver">
+<tr>
+<td colspan="2"> <center> <h1>Elementos a usar en el proyecto del gusano seguidor de linea </h1> </center> </td>
+</tr>
+
+<tr>
+<td> 
+<p><h2><font color="red"> Micro Servomotor SG90 </font></h2></p>
+
+Es un motor DC adaptado con componentes internos como engranajes y eje de salida que le permiten trabajar entre ángulos 
+de 0 a 180°. Este servomotor de tamaño pequeño es ideal para proyectos de bajo torque y donde se requiera poco peso. 
+Tiene la facilidad de poder trabajar con diversidad de plataformas de desarrollo como Arduino, PICs, Raspberry Pi, o
+ en general a cualquier microcontrolador. Requiere usar la Librería "Servo" incluida en el IDE de Arduino, y para la 
+posición 0° el pulso es de 0.6ms, para 90° es de 1.5ms y para 180° 2.4ms.
+Los cables en el conector o los pines del servomotor están distribuidos de la siguiente forma: Cafe = Tierra (GND), 
+Rojo = VCC (5V), Naranja = Señal de control (PWM).
+
+<center><p><img src="servo.png"></p></center>
+
+<p><h3><font color="black"> Especificaciones técnicas </font></h2></p>
+<br>Voltaje de alimentación: 3.0 - 7.2V DC</br>
+<br>Velocidad de giro: 0.12 seg / 60 grados</br>
+<br>Torque reposo: 1.3Kg/cm (4.8V), 1.6Kg/cm (6.0V)</br>
+<br>Ancho de pulso: 4useg (Dead band)</br>
+<br>Engranajes: Nylon</br>
+<br>Longitud del conductor: 150mm</br>
+<br>Dimensiones: 22*11.5*27 mm</br>
+<br>Peso: 9g</br>
+
+
+
+<p><h2><font color="red">Sensor infrarrojo HW-870</font></h2></p>
+Este módulo el cual presenta 4 pines es usado comúnmente en proyectos con seguidores de línea.
+ Puede ser utilizado con microcontroladores y/o tarjetas: Arduino. A su vez este sensor posee 
+un emisor de luz infrarroja y un fototransistor que recibe la luz reflejada por un posible obstáculo, 
+donde la cantidad de luz recibida depende del color y reflectividad del objeto. 
+<center><p><img src="infrarrojo.png"></p></center>
+
+<p><h3><font color="black"> Especificaciones técnicas </font></h2></p>
+<br>	Uso de sensores infrarrojos de reflexión TCRT5000</br>
+<br>	Prueba de reflexión distancia: 1 mm a 8 mm</br>
+<br>	Ángulo de detección: 35°</br>
+<br>	Número de salidas: 2 (una analógica y una digital)</br>
+<br>	Comparador LM393</br>
+<br>	Tiene un potenciómetro de precisión para ajustar la sensibilidad</br>
+<br>	Voltaje de Operación: 3.3 V - 5 V</br>
+<br>	Consumo de corriente: 15 mA</br>
+<br>	Longitud de onda: 950 nm</br>
+<br>	Dimensiones: 3.1 cm x 1.5 cm</br>
+
+<center><p><img src="infrarrojo1.png"></p></center>
+
+En cuanto al funcionamiento, primero sobre una superficie blanca, el emisor lanza la luz 
+infrarroja y rebota en la linea blanca por lo que el fototransistor lo capta, sin embargo, 
+al captar una linea negra o estar sobre una superficie negra, el emisor envia la luz infrarroja
+ pero muy poca luz es devuelta hacia el fototransistor, y por lo tanto eso se aprovecha en el uso 
+de los seguidores de linea. 
+
+<p>Y en el sensor de forma física el funcionamiento se da de la siguiente forma:</p>
+<p>_Si está llegando la luz al fotorreceptor se ilumina el LED de salida en el sensor y enviará una señal LOW o estado 0 al exterior.</p>
+<p>_Si no está llegando luz o detecta superficie negra no se iluminará el LED y enviará una señal HIGH o estado 1.</p>
+<p>_Y finalmente mediante el potenciómetro se puede ajustar la sensibilidad del fotorreceptor.</p>
+
+
+
+
+<p><h2><font color="red">Sensor ultrasonido HC-SR04</font></h2></p>
+El sensor HC-SR04 es un sensor de distancia de bajo costo que utiliza ultrasonido para determinar 
+la distancia de un objeto en un rango de 2 a 450 cm. Destaca por su pequeño tamaño, bajo consumo 
+energético, buena precisión y excelente precio.
+<p><h3><font color="black"> Especificaciones técnicas </font></h2></p>
+
+<br>	Voltaje de Operación: 5V DC</br>
+<br>	Corriente de reposo: < 2mA</br>
+<br>	Corriente de trabajo: 15mA</br>
+<br>	Rango de medición: 2cm a 450cm</br>
+<br>	Precisión: +- 3mm</br>
+<br>	Ángulo de apertura: 15°</br>
+<br>	Frecuencia de trabajo: 40KHz</br>
+<br>	Duración mínima del pulso de disparo TRIG (nivel TTL): 10 μs</br>
+<br>	Duración del pulso ECO de salida (nivel TTL): 100-25000 μs</br>
+<br>	Dimensiones: 45*20*15 mm</br>
+<br>	Tiempo mínimo de espera entre una medida y el inicio de otra 20ms (recomendable 50ms)</br>
+
+<center><p><img src="ultrasonico.png"  width="250" height="100"  HSPACE="15" ></p>
+        <p><img src="ultrasonico1.png" width="250" height="100"  HSPACE="15" ></p>
+</center>
+
+
+Y finalmente  en cuanto a su lógica de funcionamiento , el emisor piezoeléctrico emite 8 pulsos de ultrasonido(40KHz)
+ luego de recibir la orden de estado en el pin TRIG.
+Posterior a eso las ondas de sonido viajan en el aire y rebotan al encontrar un objeto, y ese sonido de rebote
+ es detectado por el receptor piezoeléctrico.
+Luego el pin ECHO cambia a Alto (5V) por un tiempo igual al que demoró la onda desde que fue emitida hasta que
+ fue detectada (es decir, el tiempo tanto de ida como de vuelta). Y la mitad del tiempo del pulso ECHO es medido por el microcontrolador
+la cual calcula la distancia a la cual se encuentra el objeto en centímetros.
+
+
+
+<p><h2><font color="red">Placa de desarrollo ESP32 DEVKIT V1</font></h2></p>
+
+
+Dicha placa de desarrollo presenta mayor memoria y un procesador de 2 núcleos de 32 bit, y permite conexión
+ a internet y con posibilidad a bluetooth lo que añade un gran panorama de trabajo para proyectos relacionados 
+con el IoT. A su vez presenta mayor velocidad de conexión a WiFi que la familia de módulos ESP8266 los cuales 
+presentan un procesador de solo 1 núcleo. 
+A su vez, otro punto a tomar en cuenta es que consume como máximo una corriente de 240mA dependiendo de la aplicación, 
+su conversor analógico digital (ADC) es mejor en comparación a otras placas, el cual es de 12 bits 
+(valores desde 0 a 4095) presentando mayor resolución en la lectura de los sensores y dispositivos conectados. 
+Otra característica importante es su frecuencia de reloj, que es de hasta 240 Mhz gracias a sus 2 procesadores, 
+lo que permite ejecutar instrucciones 15 veces más rápido que el Arduino Mega.
+<p><h3><font color="black"> Especificaciones técnicas </font></h2></p>
+
+<br>	Voltaje de Alimentación (USB): 5V DC</br>
+<br>	Voltaje de Entradas/Salidas: 3.3V DC</br>
+<br>	Placa: ESP32 DEVKIT V1 (Espressif)</br>
+<br>	SoM (módulo PCB): ESP-WROOM-32 (Espressif)</br>
+<br>	SoC (chip): ESP32 (ESP32-D0WDQ6)</br>
+<br>	CPU: Dual-Core Tensilica Xtensa LX6 (32 bit)</br>
+<br>	Frecuencia de Reloj: hasta 240Mhz</br>
+<br>	Wifi: 802.11 b/g/n/e/i (802.11n @ 2.4 GHz hasta 150 Mbit/s)</br>
+<br>	Bluetooth: v4.2 BR/EDR and Bluetooth Low Energy (BLE)</br>
+<br>	Memoria SRAM: 520 KB</br>
+<br>	Pines: 30</br>
+<br>	Dimensiones: 55*28 mm</br>
+
+<center><p><img src="esp32.png" width="580" height="200"></p></center>
+
+
+</td>
+
+
+
+<td> <a class="twitter-timeline" data-lang="es" data-width="300" data-height="700" data-theme="dark"
+ href="https://twitter.com/UCSP?ref_src=twsrc%5Etfw">Tweets by UCSP</a> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  </td>
+</tr>
+
+</center></table>
+
+
+
+
+<center><h3><table  bgcolor="white">
+<tr>
+<td>
+<a href="https://www.google.com"> Google </a> -
+<a href="index.html"> Inicio </a>
+</tr>
+</td>
+</center></h3>
+
+
+</body>
+
+</html>
